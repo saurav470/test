@@ -1,7 +1,8 @@
 const express = require('express');
 const dns = require('dns2');
 const app = express();
-
+const cors =require("cors")
+app.use(cors())
 const dnsServer = dns.createServer();
 dnsServer.listen(53);
 dnsServer.on('request', (request, response) => {
